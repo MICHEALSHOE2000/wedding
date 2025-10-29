@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ngozi & Bosun — IzzINGForever2025</title>
+
+  <!--
+    STAGE 2: HTML STRUCTURE
+    - This file is the semantic skeleton only (no CSS or JS yet).
+    - Class and id names are chosen to be explicit and predictable.
+    - Add styles in styles.css and behavior in app.js (I'll provide these next).
+  -->
+
+  <!-- Google Fonts (headings + body) - optional, will be styled later -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Link to stylesheet (added in Stage 3) -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOP HEADER (mobile topbar, contains hamburger and small logo/name) -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <button id="menu-toggle" class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation">
+        <!-- Icon: hamburger (will be styled or replaced with inline SVG later) -->
+        ☰
+      </button>
+
+      <div class="brand">
+        <a href="#home" class="brand-link">
+          <span class="brand-couple">Ngozi &amp; Bosun</span>
+          <span class="brand-sub">IzzINGForever2025</span>
+        </a>
+      </div>
+
+      <!-- Floating RSVP (also visible on desktop top-right) -->
+      <a href="#rsvp" class="btn-rsvp" id="float-rsvp" aria-label="RSVP (opens form)">
+        RSVP
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER: sidebar + main -->
+  <div class="site-root">
+
+    <!-- FIXED SIDEBAR (desktop) / Drawer (mobile) -->
+    <nav id="primary-navigation" class="sidebar" role="navigation" aria-label="Primary">
+      <div class="sidebar-inner">
+        <!-- Logo / Badge -->
+        <div class="sidebar-brand" aria-hidden="true">
+          <!-- placeholder for circular monogram -->
+          <div class="monogram">NB</div>
+        </div>
+
+        <!-- Primary menu -->
+        <ul class="nav-list" role="menu">
+          <li role="none"><a role="menuitem" href="#home" class="nav-link">Home</a></li>
+          <li role="none"><a role="menuitem" href="#our-story" class="nav-link">Our Story</a></li>
+
+          <!-- The Wedding dropdown anchors -->
+          <li role="none" class="nav-item-has-children">
+            <button class="nav-toggle" aria-expanded="false" aria-controls="wedding-submenu">The Wedding ▾</button>
+            <ul id="wedding-submenu" class="nav-submenu" role="menu" hidden>
+              <li role="none"><a role="menuitem" href="#traditional" class="nav-link">Traditional</a></li>
+              <li role="none"><a role="menuitem" href="#court" class="nav-link">Court</a></li>
+              <li role="none"><a role="menuitem" href="#church" class="nav-link">Church</a></li>
+              <li role="none"><a role="menuitem" href="#reception" class="nav-link">Reception</a></li>
+            </ul>
+          </li>
+
+          <li role="none"><a role="menuitem" href="#general-info" class="nav-link">General Info</a></li>
+          <li role="none"><a role="menuitem" href="#gift-lists" class="nav-link">Our Gift Lists</a></li>
+          <li role="none"><a role="menuitem" href="#wedding-party" class="nav-link">Wedding Party</a></li>
+          <li role="none"><a role="menuitem" href="#rsvp" class="nav-link">RSVP</a></li>
+          <li role="none"><a role="menuitem" href="#travel-stay" class="nav-link">Travel &amp; Stay</a></li>
+          <li role="none"><a role="menuitem" href="#gallery" class="nav-link">Gallery</a></li>
+        </ul>
+
+        <!-- Small footer inside sidebar -->
+        <div class="sidebar-footer" aria-hidden="true">
+          <small>&copy; 2025 Ngozi &amp; Bosun</small>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="main" class="main-content" role="main">
+
+      <!-- HERO / LANDING -->
+<section id="home" class="hero" aria-label="Wedding hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+  
+        <!-- Decorative Icons -->
+        <div class="hero-emblems">💍 💍</div>
+  
+        <!-- Couple Name -->
+        <h1 class="couple-name">Ngozi &amp; Bosun</h1>
+  
+        <!-- Full Event Intro -->
+        <p class="hero-date">
+          Are getting married on <strong>Saturday, 20 December, 2025</strong> at <strong>12 O'Clock in the afternoon</strong><br>
+          at <strong>Diocese of Abuja Anglican Communion, Basilica of Grace, Apo, Abuja</strong>
+        </p>
+  
+        <!-- Welcome Heading -->
+        <h2 class="welcome-heading">WELCOME!</h2>
+  
+        <!-- Welcome Text -->
+        <p class="hero-welcome-text">
+          Welcome to our wedding website. Join us as we say “I do” and begin our forever. 
+          We’re so excited to celebrate this joyful milestone with our favorite people — from near and far.
+          On this site, you’ll find everything you need: travel tips, accommodation details, our love story,
+          bridal party introductions, and updates as we count down to the big day.
+        </p>
+  
+        <!-- Countdown Heading -->
+        <p class="countdown-title">Countdown to Wedding Ceremony:</p>
+  
+        <!-- Countdown Container (JS will update numbers) -->
+        <div id="countdown" class="countdown" aria-live="polite">
+          <div class="count-item"><span class="count-number" data-unit="days">00</span><span class="count-label">Days</span></div>
+          <div class="count-item"><span class="count-number" data-unit="hours">00</span><span class="count-label">Hours</span></div>
+          <div class="count-item"><span class="count-number" data-unit="minutes">00</span><span class="count-label">Minutes</span></div>
+          <div class="count-item"><span class="count-number" data-unit="seconds">00</span><span class="count-label">Seconds</span></div>
+        </div>
+  
+        <!-- Date Line again for emphasis -->
+        <p class="ceremony-date-line">🗓 20 December 2025 🗓</p>
+  
+        <!-- Hashtag -->
+        <p class="wedding-hashtag">✨ Hashtag your memories with <strong>#IzzINGForever2025</strong> ✨</p>
+  
+        <!-- Closing Line -->
+        <p class="closing-line">Let the love, laughter, and lace begin.</p>
+  
+        <!-- CTA Button -->
+        <a href="#rsvp" class="hero-cta">RSVP</a>
+  
+      </div>
+    </div>
+  </section>
+  
+
+      <!-- QUICK LINKS / TILES -->
+      <section id="quick-links" class="tiles" aria-label="Quick links">
+        <div class="tiles-inner">
+          <!-- Each tile is a semantic link to a section anchor -->
+          <a href="#general-info" class="tile" aria-label="General information">
+            <div class="tile-icon" aria-hidden="true">ℹ️</div>
+            <h3 class="tile-title">General Info</h3>
+          </a>
+
+          <a href="#wedding-party" class="tile" aria-label="Wedding party">
+            <div class="tile-icon" aria-hidden="true">👰‍♀️</div>
+            <h3 class="tile-title">Wedding Party</h3>
+          </a>
+
+          <a href="#gift-lists" class="tile" aria-label="Gift lists">
+            <div class="tile-icon" aria-hidden="true">🎁</div>
+            <h3 class="tile-title">Gift Lists</h3>
+          </a>
+
+          <a href="#travel-stay" class="tile" aria-label="Travel and stay">
+            <div class="tile-icon" aria-hidden="true">🧳</div>
+            <h3 class="tile-title">Travel &amp; Stay</h3>
+          </a>
+
+          <a href="#gallery" class="tile" aria-label="Gallery">
+            <div class="tile-icon" aria-hidden="true">📸</div>
+            <h3 class="tile-title">Gallery</h3>
+          </a>
+
+          <a href="#rsvp" class="tile" aria-label="RSVP">
+            <div class="tile-icon" aria-hidden="true">✉️</div>
+            <h3 class="tile-title">RSVP</h3>
+          </a>
+        </div>
+      </section>
+
+      <!-- OUR STORY -->
+      <section id="our-story" class="section story" aria-labelledby="our-story-title">
+        <div class="container">
+          <h2 id="our-story-title">Our Story</h2>
+          <div class="story-grid">
+            <article class="story-piece">
+              <h3>The Bride — Ngozi</h3>
+              <p><!-- Paste bride copy here --> I'm completely drawn to Bosun. His heart is truly extraordinary... </p>
+              <blockquote aria-label="Bride vow">“I vow to love you with a heart rooted in grace..."</blockquote>
+            </article>
+
+            <article class="story-piece">
+              <h3>The Groom — Bosun</h3>
+              <p><!-- Paste groom copy here --> Ngozi means the world to me. I'm beyond excited to spend forever with her... </p>
+              <blockquote aria-label="Groom vow">“I promise to build our home on the foundation of faith..."</blockquote>
+            </article>
+          </div>
+
+          <div class="proposal">
+            <h4>How He Proposed</h4>
+            <p><!-- Proposal story --> He spelled the message on a Scrabble board: "MY LOVE WILL YOU MARRY ME" — and she said yes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE WEDDING: Traditional / Court / Church / Reception -->
+      <section id="the-wedding" class="section wedding-events" aria-labelledby="wedding-title">
+        <div class="container">
+          <h2 id="wedding-title">The Wedding</h2>
+
+          <article id="traditional" class="event">
+            <h3>Traditional Wedding Ceremony</h3>
+            <p>Details: date, time, venue, attire, notes.</p>
+          </article>
+
+          <article id="court" class="event">
+            <h3>Court (Civil) Wedding</h3>
+            <p>Details: date, time, venue, attire, notes.</p>
+          </article>
+
+          <article id="church" class="event">
+            <h3>Church Ceremony</h3>
+            <p>Diocese of Abuja Anglican Communion, Basilica of Grace — 12:00PM, 20 December 2025</p>
+          </article>
+
+          <article id="reception" class="event">
+            <h3>Drinks, Dinner &amp; Dancing</h3>
+            <p>HQ NAF Officers' Mess and Suites — 2:00PM. Dress code: see General Info.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- GENERAL INFORMATION -->
+<section id="general-info" class="section general-info" aria-labelledby="general-info-title">
+    <div class="container">
+  
+      <h2 id="general-info-title" class="section-title">🪡 General Information</h2>
+      <p class="section-sub">Everything you need to celebrate with us</p>
+  
+      <div class="info-grid">
+  
+        <!-- Couple & Date -->
+        <div class="info-card">
+          <h3>Event Overview</h3>
+          <ul>
+            <li><strong>Couple:</strong> Ngozi &amp; Bosun</li>
+            <li><strong>Wedding Date:</strong> Saturday, December 20, 2025</li>
+            <li><strong>Hashtag:</strong> #IzzINGForever2025</li>
+          </ul>
+        </div>
+  
+        <!-- Church Ceremony -->
+        <div class="info-card">
+          <h3>Church Ceremony</h3>
+          <ul>
+            <li><strong>Time:</strong> 12 O'Clock in the Afternoon</li>
+            <li><strong>Location:</strong> Diocese of Abuja Anglican Communion<br>Basilica of Grace, Ahmadu Bello Way , Abuja, 
+            Federal Capital Territory, Nigeria</li>
+          </ul>
+          
+        </div>
+  
+        <!-- Reception -->
+        <div class="info-card">
+          <h3>Drinks, Dinner & Dancing</h3>
+          <ul>
+            <li><strong>Time:</strong> 2 O'Clock in the Afternoon</li>
+            <li><strong>Location:</strong> HQ NAF Officers' Mess and Suites,<br>Kado District, Abuja</li>
+          </ul>
+        </div>
+  
+        <!-- Color Code -->
+        <div class="info-card">
+          <h3>Colour Code</h3>
+          <p>We kindly encourage guests to dress in:</p>
+          <ul>
+            <li><strong> Elegant Ladies:</strong> Peach &amp; Gold</li>
+            <li><strong>Dapper Men:</strong>  Aso-Ebi Cap On White</li>
+          </ul>
+        </div>
+  
+        <!-- Adult Event Notice -->
+        <div class="info-card">
+          <h3>Adult Event Only</h3>
+          <p>Only children who are part of the entourage are included in the ceremony and reception.</p>
+        </div>
+  
+        <!-- Snap & Share -->
+        <div class="info-card">
+          <h3>Snap &amp; Share</h3>
+          <p>Capture the love and share online using our hashtag:</p>
+          <p class="hashtag">#IzzINGForever2025</p>
+        </div>
+  
+        <!-- Unplugged Ceremony -->
+        <div class="info-card">
+          <h3>Unplugged Ceremony</h3>
+          <p>Please keep phones and cameras away until after we say "I Do".</p>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
+  
+
+      <!-- GIFT LISTS -->
+      <section id="gift-lists" class="section gift-lists" aria-labelledby="gift-lists-title">
+        <div class="container">
+          <h2 id="gift-lists-title">Our Gift Lists</h2>
+
+          <p>Links to registries, bank account details or suggested gift ideas go here. (We will add copy-to-clipboard buttons in Stage 3.)</p>
+
+          <ul class="registry-list">
+            <li><a href="#" target="_blank" rel="noopener">Registry: Example Store</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Bank Transfer Instructions (placeholder)</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- WEDDING PARTY -->
+      <section id="wedding-party" class="section wedding-party" aria-labelledby="wedding-party-title">
+        <div class="container">
+          <h2 id="wedding-party-title">Wedding Party</h2>
+
+          <!-- Responsive grid of people; each person will open a modal with more info -->
+          <ul class="party-grid" role="list">
+            <!-- Example list item -->
+            <li class="party-member">
+              <button class="party-card" data-person="mally" aria-haspopup="dialog" aria-controls="person-mally">
+                <img src="assets/party-mally.jpg" alt="Mally — Maid of Honour" loading="lazy">
+                <div class="party-meta">
+                  <h3>Mally</h3>
+                  <p class="party-role">Maid of Honour — The Anchor</p>
+                </div>
+              </button>
+            </li>
+
+            <!-- Repeat for other members (Tope, Christabel, etc.) -->
+            <!-- Keep markup consistent so JS can open details modals by data-person -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- RSVP (Formspree form) -->
+      <section id="rsvp" class="section rsvp" aria-labelledby="rsvp-title">
+        <div class="container">
+          <h2 id="rsvp-title">RSVP</h2>
+          <p>Please let us know if you can join us — this form submits to Formspree. Replace YOUR_FORMSPREE_ID with your actual ID.</p>
+
+          <!--
+            IMPORTANT:
+            - Replace `YOUR_FORMSPREE_ID` with the ID you get from Formspree.
+            - Formspree usually expects action="https://formspree.io/f/{formId}" and method="POST".
+            - Add hidden inputs if you want to redirect on success or configure via Formspree.
+          -->
+          <form id="rsvp-form" class="form-rsvp" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+            <div class="form-row">
+              <label for="rsv-name">Full name <span aria-hidden="true">*</span></label>
+              <input id="rsv-name" name="name" required type="text" placeholder="Your full name">
+            </div>
+
+            <div class="form-row">
+              <label for="rsv-email">Email <span aria-hidden="true">*</span></label>
+              <input id="rsv-email" name="email" required type="email" placeholder="you@example.com">
+            </div>
+
+            <div class="form-row">
+              <label for="rsv-guests">Number of guests</label>
+              <input id="rsv-guests" name="guests" type="number" min="1" max="10" placeholder="1">
+            </div>
+
+            <div class="form-row">
+              <label for="rsv-meal">Meal choice</label>
+              <select id="rsv-meal" name="meal">
+                <option value="">Select a meal</option>
+                <option value="chicken">Chicken</option>
+                <option value="beef">Beef</option>
+                <option value="vegetarian">Vegetarian</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="rsv-message">Message / notes</label>
+              <textarea id="rsv-message" name="message" rows="4" placeholder="Any dietary requirements or notes"></textarea>
+            </div>
+
+            <!-- Honeypot (optional) -->
+            <div style="display:none;">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-row form-actions">
+              <button type="submit" class="btn-submit">Send RSVP</button>
+              <div id="rsvp-status" class="form-status" role="status" aria-live="polite"></div>
+            </div>
+          </form>
+
+        </div>
+      </section>
+
+      <!-- TRAVEL & STAY -->
+      <section id="travel-stay" class="section travel-stay" aria-labelledby="travel-stay-title">
+        <div class="container">
+          <h2 id="travel-stay-title">Travel &amp; Stay</h2>
+          <p>Embedded Google Map placeholder (we'll add iframe in Stage 3), hotels, transport, and local tips.</p>
+
+          <div class="hotels">
+            <article class="hotel">
+              <h3>Nearby Hotel A</h3>
+              <p>Distance, contact details, booking tips.</p>
+            </article>
+
+            <article class="hotel">
+              <h3>Nearby Hotel B</h3>
+              <p>Distance, contact details, booking tips.</p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery" class="section gallery" aria-labelledby="gallery-title">
+        <div class="container">
+          <h2 id="gallery-title">Gallery</h2>
+
+          <div class="gallery-grid" role="list">
+            <!-- Example image tile; JS will open a lightbox on click -->
+            <figure class="gallery-item" role="listitem">
+              <img src="assets/gallery-1.jpg" alt="Engagement photo 1" loading="lazy">
+              <figcaption>Engagement — Lagos</figcaption>
+            </figure>
+
+            <figure class="gallery-item" role="listitem">
+              <img src="assets/gallery-2.jpg" alt="Pre-wedding photo 2" loading="lazy">
+              <figcaption>Our first trip</figcaption>
+            </figure>
+
+            <!-- more images -->
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+          <p>Made with ❤️ • #IzzINGForever2025 • &copy; 2025 Ngozi &amp; Bosun</p>
+        </div>
+      </footer>
+
+    </main> <!-- end main -->
+
+  </div> <!-- end site-root -->
+
+  <!-- MODALS / DIALOGS (hidden initially) -->
+  <!-- Example: person details modal (populate content with JS) -->
+  <div id="person-modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-title" aria-modal="true">
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <h3 id="modal-title">Member name</h3>
+      <div id="modal-body">
+        <!-- dynamic content goes here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- PLACEHOLDER FOR JS (I will provide Stage 4) -->
+  <script src="app.js" defer></script>
+</body>
+</html>
