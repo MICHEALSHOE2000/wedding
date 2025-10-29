@@ -501,6 +501,54 @@ a { color: inherit; text-decoration: none; }
 /* -------------------------
    WEDDING PARTY GRID
    ------------------------- */
+   .wedding-party {
+    background: #fff7f3;
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #c68b5c;
+  }
+  
+  .section-intro {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1rem;
+    color: #6d6d6d;
+    line-height: 1.6;
+  }
+  
+  .party-list {
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .party-person {
+    background: #ffffff;
+    border: 1px solid rgba(198,139,92,0.25);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+  }
+  
+  .party-person h3 {
+    font-family: "Playfair Display", serif;
+    color: #b67a44;
+    font-size: 1.1rem;
+    margin-bottom: .45rem;
+  }
+  
+  .party-person p {
+    color: #5b5b5b;
+    font-size: .95rem;
+    line-height: 1.55;
+  }
+  
 .party-grid{
   display:grid;
   grid-template-columns: repeat(2,1fr);
